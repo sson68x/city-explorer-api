@@ -3,12 +3,15 @@
 console.log('our first server');
 
 //REQUIRE
+//dotenv allows us to get access to env
 const express = require('express');
 require('dotenv').config();
 let weatherData = require('./data/weather.json');
+const cors = require('cors');
 
 //USE
 const app = express();
+app.use(cors())
 //app is instance of express
 
 
@@ -22,7 +25,7 @@ app.get('/', (request, response) => {
 app.get('/weather', (request, response) => {
   let searchQuery = request.query.searchQuery;
   let cityWeather = weatherData.find(data =>
-    data.city_name.toLocaleLowerCase() === searchQuery.toLocaleLowerCase());
+    data.city_name.toLowerCase() === searchQuery.toLowerCase());
   let cityForecast = cityWeather.data.map (weather => {
     return new Forecast(weather);
   });

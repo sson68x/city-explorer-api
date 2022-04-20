@@ -34,10 +34,10 @@ Name of feature: 2. Weather
 
 Estimate of time needed to complete: 2 hours
 
-Start time: 3:30
+Start date/time: Apr 19
 
-Finish time: 
+Finish date/time: Apr 20
 
-Actual time needed to complete:
+Actual time needed to complete: 6-7 hours
 
 ![Framework](/img/framework2.jpg)
