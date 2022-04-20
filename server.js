@@ -21,9 +21,9 @@ app.get('/', (request, response) => {
 });
 app.get('/weather', (request, response) => {
   let searchQuery = request.query.searchQuery;
-  let cityData = weatherData.find(data =>
+  let cityWeather = weatherData.find(data =>
     data.city_name.toLocaleLowerCase() === searchQuery.toLocaleLowerCase());
-  let cityForecast = cityData.data.map (weather => {
+  let cityForecast = cityWeather.data.map (weather => {
     return new Forecast(weather);
   });
   response.send(cityForecast);
@@ -39,9 +39,9 @@ app.get('*', (request, response) => {
 
 //CLASSES
 class Forecast {
-  constructor(cityData) {
-    this.date = cityData.datetime;
-    this.description = cityData.weather.description;
+  constructor(cityWeather) {
+    this.date = cityWeather.datetime;
+    this.description = cityWeather.weather.description;
   }
 }
 

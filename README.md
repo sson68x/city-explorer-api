@@ -29,3 +29,15 @@ Start time: 2:30
 Finish time: 3:10
 
 Actual time needed to complete: 40 min
+
+Name of feature: 2. Weather
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 3:30
+
+Finish time: 
+
+Actual time needed to complete:
+
+![Framework](/img/framework2.jpg)
