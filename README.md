@@ -20,24 +20,17 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-Name of feature: 1. Set up your server repository
 
-Estimate of time needed to complete: 30 min
+## Lab 08
 
-Start time: 2:30
+Name of feature: 2. Weather & 3. Movies
 
-Finish time: 3:10
+Estimate of time needed to complete: 3 hours
 
-Actual time needed to complete: 40 min
+Start date/time: Apr 20
 
-Name of feature: 2. Weather
+Finish date/time: --
 
-Estimate of time needed to complete: 2 hours
-
-Start date/time: Apr 19
-
-Finish date/time: Apr 20
-
-Actual time needed to complete: 6-7 hours
+Actual time needed to complete: -- 
 
 ![Framework](/img/framework2.jpg)
