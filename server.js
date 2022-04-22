@@ -83,7 +83,8 @@ class Forecast {
 
 class Movies {
   constructor(movies) {
-    this.movie = movies.title;
+    this.poster = movies.poster_path;
+    this.title = movies.title;
     this.overview = movies.vote_average;
   }
 }
