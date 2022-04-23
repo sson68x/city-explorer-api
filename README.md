@@ -20,16 +20,26 @@
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-## Lab 09
+## Lab 08
 
-Name of feature: 1. Refactor
+Name of feature: Weather, Movies & Publish
 
-Estimate of time needed to complete: 30 min
+Estimate of time needed to complete: 3 hours
 
-Start time: 3:30
+Start date: Apr 20
 
-Finish time: 3:45
+Finish time: Apr 21
 
-Actual time needed to complete: 15 min 
+Actual time needed to complete: 7 hours
 
-![WRRC](/img/Lab9WRRC.jpg)
+## Lab 06 WRRC
+
+![WRRC](/img/framework.jpg)
+
+## Lab 07 WRRC
+
+![WRRC](/img/framework2.jpg)
+
+## Lab 08 WRRC
+
+![WRRC](/img/Lab8WRRC.jpg)
