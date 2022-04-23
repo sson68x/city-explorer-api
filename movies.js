@@ -2,9 +2,13 @@
 
 const axios = require('axios');
 
+let cache = require('./cache.js');
+
 async function getMovies(req, res) {
     console.log(req.query.searchQuery);
+
     let searchQuery = req.query.searchQuery;
+    
     let moviesUrl = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_API_KEY}&query=${searchQuery}`;
     console.log(moviesUrl);
     let results = await axios.get(moviesUrl);

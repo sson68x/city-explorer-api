@@ -1,4 +1,4 @@
-# city-explorer-api
+# City Explorer Api
 
 **Author**: Simon Son
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
@@ -18,19 +18,22 @@
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-## Lab 08
+Sheyna - Instructor
 
-Name of feature: Weather, Movies & Publish
+Justin, David & Joey - TAs
 
-Estimate of time needed to complete: 3 hours
+## Lab 10
 
-Start date: Apr 20
+Name of feature: Performance
 
-Finish time: Apr 21
+Estimate of time needed to complete: 2 hours
 
-Actual time needed to complete: 7 hours
+Start date: Apr 22
+
+Finish date: --
+
+Actual time needed to complete: Not completed
 
 ## Lab 06 WRRC
 
@@ -43,3 +46,11 @@ Actual time needed to complete: 7 hours
 ## Lab 08 WRRC
 
 ![WRRC](/img/Lab8WRRC.jpg)
+
+## Lab 09 WRRC
+
+![WRRC](/img/Lab9WRRC.jpg)
+
+## Lab 10 WRRC
+
+![WRRC](/img/Lab10WRRC.jpg)
