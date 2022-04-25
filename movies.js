@@ -1,19 +1,28 @@
 'use strict';
 
 const axios = require('axios');
+let cache = require('./modules/cache.js');
 
-let cache = require('./cache.js');
-
-async function getMovies(req, res) {
-    console.log(req.query.searchQuery);
-
-    let searchQuery = req.query.searchQuery;
-    
-    let moviesUrl = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_API_KEY}&query=${searchQuery}`;
-    console.log(moviesUrl);
-    let results = await axios.get(moviesUrl);
-    let moviesArr = results.data.results.map(movie => new Movies(movie));
-    res.send(moviesArr);
+function getMovies(req, res) {
+  let searchQuery = req.query.searchQuery;
+  let key = 'movie-' + searchQuery
+  
+  let movieUrl = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_API_KEY}&query=${searchQuery}`;
+  if (cache[key] && (Date.now() - cache[key].timestamp < 50000)) {
+    console.log('Movies - Cache hit');
+    res.send(cache[key].data);
+  } else {
+    console.log('Movies - Cache miss');
+    cache[key] = {};
+    cache[key].timestamp = Date.now();
+    axios.get(movieUrl)
+    .then(movieData => movieData.data.results.map(movie => new Movies(movie)))
+    .then(newMovies => {
+      cache[key].data = newMovies;
+      res.send(newMovies)
+    })
+    .catch(err => console.error(err));
+  }
 }
 
 class Movies {
