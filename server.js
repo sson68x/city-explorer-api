@@ -1,42 +1,36 @@
 'use strict';
 
-console.log('our first server');
+console.log('this is our new server.');
 
-//REQUIRE
-//dotenv allows us to get access to env
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios');
+
+const weather = require('./modules/weather.js');
 const getMovies = require('./movies')
-const getWeather = require('./weather')
-require('dotenv').config();
 
-//app is an instance of express
 const app = express();
+app.use(cors());
 
-//USE
-app.use(cors())
+let PORT = process.env.PORT || 3002
 
-
-//define PORT
-const PORT = process.env.PORT || 3002;
-
-//ROUTES
 app.get('/', (request, response) => {
-  response.send('Hello, from our server');
+  response.send('Simon\'s City Explorer Server')
 });
 
-app.get('/weather', getWeather);
+app.get('/weather', weatherHandler);
 
 app.get('/movies', getMovies);
 
+function weatherHandler(request, response) {
+  const cityLat = request.query.lat;
+  const cityLon = request.query.lon;
+  weather(cityLat, cityLon)
+  .then(summaries => response.send(summaries))
+  .catch((error) => {
+    console.error(error);
+    response.status(200).send('Sorry. Something went wrong!')
+  });
+}  
 
-//at the bottom of all our routes
-app.get('*', (request, response) => {
-  response.send('Not sure what you are looking for...')
-});
-
-//LISTEN
-//Start the server
-//listen is an Express method that takes in a PORT value
-app.listen(PORT, () => console.log(`listening on ${PORT}`))
+app.listen(process.env.PORT, () => console.log(`Server up on ${PORT}`));
